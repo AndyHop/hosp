@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table class="table mx-auto mb-3" style="width: 400px">
+        <thead>
+            <tr>
+                <th scope="col">заказы</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ship in ships %}
+                <tr>
+                    <td>{{ ship['t_month'] }}</td>
+                    <td>{{ ship['t_type'] }}</td>
+                    <td>{{ ship['t_amount'] }}</td>
+
+                </tr>
+            {% endfor %}
+        {{status}}
+        </tbody>
+    </table>
+    <a href="/menu" class="btn btn-outline-success mb-3">Назад в меню</a>
+{% endblock %}

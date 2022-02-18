@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table class="table mx-auto mb-3" style="width: 400px">
+        <thead>
+            <h3>врачи к которым поступали пациенты в выбранное время</h3>
+        </thead>
+        <tbody>
+        <tr>
+         <td align = center> имя </td>
+      </tr>
+            {% for row in doctors %}
+                <tr>
+                    <td>{{ row['name'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/req_menu" class="btn btn-outline-success mb-3">Назад в меню</a>
+{% endblock %}

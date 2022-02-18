@@ -1,0 +1,12 @@
+{
+  "1": ["employeers", "admins", "head_terapy", "head_surgery"],
+  "4":["employeers", "admins"],
+  "3":["employeers", "admins"],
+  "5": ["employeers", "admins"],
+  "6": ["employeers", "admins"],
+  "7": ["employeers", "admins"],
+  "10": ["employeers", "admins"],
+  "2": ["employeers", "admins"],
+  "8": ["admins", "junior", "employeers"],
+  "9": ["admins", "doctor", "employeers", "head_terapy", "head_surgery"]
+}

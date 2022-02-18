@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h3>информация о пациенте поступившем раньше всего в выбранном месяце</h3>
+	<form method='POST' class="text-center mx-auto mb-3" style="width: 400px" action=''>
+        <div class="form-group">
+            <label for="month">Enter month</label>
+            <select class="form-control" id="month" name="month">
+                <option value="01">January</option>
+                <option value="02">February</option>
+                <option value="03">March</option>
+                <option value="04">April</option>
+                <option value="05">May</option>
+                <option value="06">June</option>
+                <option value="07">July</option>
+                <option value="08">August</option>
+                <option value="09">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-outline-success" name='send' value='Отправить'>Отправить</button>
+	</form>
+    <a href="/req_menu" class="btn btn-outline-success mb-3">Назад в меню</a>
+{% endblock %}

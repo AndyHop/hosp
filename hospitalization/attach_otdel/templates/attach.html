@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+        информация о пацинте:
+    <table class="table mx-auto mb-3" style="width: 400px">
+        <thead>
+            <h3>информация по отделениям</h3>
+        </thead>
+        <tbody>
+        <tr>
+         <td align = center> имя </td>
+         <td align = center> дата рождения </td>
+         <td align = center> диагноз </td>
+            <td align = center> дата пол. диагноза </td>
+            <td align = center> дата госпитализации </td>
+      </tr>
+            {% for row in pat %}
+                <tr>
+
+                    <td>{{ row['name'] }}</td>
+                    <td>{{ row['birthday'] }}</td>
+                    <td>{{ row['receipt_diagnose'] }}</td>
+                    <td>{{ row['receipt_date'] }}</td>
+                    <td>{{ row['hosp_date'] }}</td>
+                </tr>
+            {% endfor %}
+                </tbody>
+
+    </table>
+       <table class="table mx-auto mb-3" style="width: 400px">
+        <thead>
+            <h3>информация по отделениям</h3>
+        </thead>
+        <tbody>
+        <tr>
+         <td align = center> Отделение </td>
+         <td align = center> количество палат </td>
+         <td align = center> Вместимость </td>
+            <td align = center> выбрать </td>
+      </tr>
+            {% for otdel in otdel_info %}
+                <form method="post" class="text-center mx-auto mb-3" style="width: 400px" action="">
+                <tr>
+
+                    <td>{{ otdel['number'] }} {{ otdel['name'] }}</td>
+                    <td>{{ otdel['palat'] }}</td>
+                    <td>{{ otdel['cap'] }}</td>
+                    <input type=hidden name=id_otdel value={{ otdel['id_otdelenie'] }}>
+                    <input type=hidden name=pat_id value={{ pati_id }}>
+                    <td> <input type=submit class="btn btn-success mb-3" value='выбрать' name='confirm' > </td>
+
+
+                </tr>
+                </form>
+            {% endfor %}
+        </tbody>
+
+    </table>
+
+    <a href="/hosp" class="btn btn-outline-success mb-3">Назад в меню госпитализации</a>
+{% endblock %}

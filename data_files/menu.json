@@ -1,0 +1,8 @@
+[
+  {"name" : "вход",  "url" : "?point=1"},
+  {"name" : "Запросы", "url": "?point=2"},
+  {"name" : "requets 1", "url" : "?point=3"},
+  {"name" : "requets 2", "url" : "?point=4"},
+  {"name": "Выход", "url": "?point=5"},
+  {"name": "Отчёт", "url": "?point=6"}
+]

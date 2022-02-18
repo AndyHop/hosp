@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        {{ top }}
+    {% for ordr in menu %}
+        <form class="text-center mx-auto mb-3" action="" method=POST>
+            <input type=hidden name=order_id value={{ ordr.id }}>
+
+             {{ ordr.client }} {{ ordr.total_cost }} {{ ordr.created_at }}
+            <input type=submit class="btn btn-success mb-3" value='отредактировать' name='edit'>
+        </form>
+    {% endfor %}
+
+    <form action="" method=POST>
+      <input type=submit value='новый заказ' class="btn btn-outline-success mb-3" name = 'new_order'>
+    </form>
+
+    <a href="/menu" class="btn btn-outline-success mb-3">Назад в меню</a>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        {{ top }}
+        формат даты: 2001-01-15
+    	<form method='POST' class="text-center mx-auto mb-3" style="width: 400px" action=''>
+            <div class="form-group">
+            <label for="hosp_date">госпитализация назначена на:</label>
+            <input class="form-control" type="text" id="hosp_date" name="hosp_date" required>
+            </div>
+
+            <input type=submit value='получить' class="btn btn-outline-success mb-3" name = 'search'>
+        	</form>
+
+    <a href="/hosp" class="btn btn-outline-success mb-3">Назад в меню</a>
+{% endblock %}

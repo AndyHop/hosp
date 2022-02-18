@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table class="table mx-auto mb-3" style="width: 400px">
+        <thead>
+            <h3>информация о сотрудниках приступивших к работе в выбранном году</h3>
+        </thead>
+        <tbody>
+        <tr>
+         <td align = center> id </td>
+         <td align = center> имя </td>
+         <td align = center> сколько проработал </td>
+         <td align = center> отделение </td>
+      </tr>
+            {% for row in info %}
+                <tr>
+
+                    <td>{{ row['id_doctors'] }}</td>
+                    <td>{{ row['name'] }}</td>
+                    <td>{{ row['diff_years'] }}</td>
+                    <td>{{ row['uid_myotd'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/req_menu" class="btn btn-outline-success mb-3">Назад в меню</a>
+{% endblock %}

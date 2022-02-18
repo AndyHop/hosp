@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+   номер заказа: {{ order_id }}
+     <table class="table mx-auto mb-3" style="width: 400px">
+        <thead>
+            <h3>текущая информация о человеке:</h3>
+        </thead>
+        <tbody>
+        <tr>
+            <td align = center> id </td>
+            <td align = center> имя </td>
+            <td align = center> pass_data </td>
+            <td align = center> birthday </td>
+            <td align = center> address </td>
+            <td align = center> receipt_date </td>
+            <td align = center> receipt_diagnose </td>
+        </tr>
+            {% for p in pat %}
+                <tr>
+                    <td>{{ p['idpatience'] }}</td>
+                    <td>{{ p['name'] }}</td>
+                    <td>{{ p['pass_data'] }}</td>
+                    <td>{{ p['birthday'] }}</td>
+                    <td>{{ p['address'] }}</td>
+                    <td>{{ p['receipt_date'] }}</td>
+                    <td>{{ p['receipt_diagnose'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    необходимо назначить палату
+    {% for palata in palata_list %}
+        <form class="text-center mx-auto mb-3" action="" method=POST>
+
+            <input type=hidden name=srvc_id value={{ palata.id }}>
+            <input type=hidden name=zakaz_id value={{ palata }}>
+             {{ palata.idpalata }} {{ palata.plt_num }} {{ palata.capacity }} {{ palata.category }}
+            <input type=submit class="btn btn-success mb-3" value='Прикрепить' name='edit_add'>
+        </form>
+    {% endfor %}
+    <form class="text-center mx-auto mb-3" action="" method=POST>
+      <input type=submit class="btn btn-outline-success mb-3" value='подтвердить' name='confirm'>
+        <input type=hidden name=zakaz_id value={{ order_id }}>
+    </form>
+
+    <a href="/menu" class="btn btn-outline-success mb-3">Назад в меню
+    </a>
+{% endblock %}

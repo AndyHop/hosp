@@ -1,0 +1,5 @@
+{
+  "1": ["employeers", "admins","junior", "doctor", "head_terapy", "head_surgery", "guest"],
+  "2": ["admins", "junior", "employeers", "guest"],
+  "3": ["head_terapy", "head_surgery"]
+}

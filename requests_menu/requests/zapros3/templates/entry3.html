@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h3>информация о сотрудниках приступивших к работе в выбранном году</h3>
+	<form method='POST' class="text-center mx-auto mb-3" style="width: 400px" action=''>
+
+        <div class="form-group">
+            <label for="month">выберите год вступления в должность</label>
+            <select class="form-control" id="year" name="year">
+                {% for y in year %}
+                    <option value="{{y['number']}}" SELECTED>{{ y['number'] }}</option>"
+                {% endfor %}
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-outline-success" name='send' value='Отправить'>Отправить</button>
+	</form>
+    <a href="/req_menu" class="btn btn-outline-success mb-3">Назад в меню</a>
+{% endblock %}

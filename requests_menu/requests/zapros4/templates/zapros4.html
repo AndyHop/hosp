@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table class="table mx-auto mb-3" style="width: 400px">
+        <thead>
+            <h3>информация о пациенте поступившем раньше всего в выбранном месяце</h3>
+        </thead>
+        <tbody>
+        <tr>
+            <td align = center> id </td>
+            <td align = center> имя </td>
+            <td align = center> pass_data </td>
+            <td align = center> birthday </td>
+            <td align = center> address </td>
+            <td align = center> receipt_date </td>
+            <td align = center> receipt_diagnose </td>
+            <td align = center> discharge_date </td>
+            <td align = center> discharge_diagnose </td>
+            <td align = center> uid_palata </td>
+            <td align = center> uid_attending_doc </td>
+            <td align = center> hosp_date </td>
+      </tr>
+            {% for row in info %}
+                <tr>
+
+                    <td>{{ row['idpatience'] }}</td>
+                    <td>{{ row['name'] }}</td>
+                    <td>{{ row['pass_data'] }}</td>
+                    <td>{{ row['birthday'] }}</td>
+                    <td>{{ row['address'] }}</td>
+                    <td>{{ row['receipt_date'] }}</td>
+                    <td>{{ row['receipt_diagnose'] }}</td>
+                    <td>{{ row['discharge_date'] }}</td>
+                    <td>{{ row['discharge_diagnose'] }}</td>
+                    <td>{{ row['uid_palata'] }}</td>
+                    <td>{{ row['uid_attending_doc'] }}</td>
+                    <td>{{ row['hosp_date'] }}</td>
+
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/req_menu" class="btn btn-outline-success mb-3">Назад в меню</a>
+{% endblock %}

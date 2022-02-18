@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h3>все врачи без прикрепленных пациентов в конкретном отделении</h3>
+	<form method='POST' class="text-center mx-auto mb-3" style="width: 400px" action=''>
+
+    <div class="form-group">
+            <label for="id_otdel">выберите отделение</label>
+            <select class="form-control" id="id_otdel" name="id_otdel">
+                {% for otd in info %}
+                    <option value="{{otd['id_otdelenie']}} " SELECTED>{{ otd['number'] }} {{ otd['name'] }}</option>"
+                {% endfor %}
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-outline-success" name='send' value='Отправить'>Отправить</button>
+	</form>
+    <a href="/req_menu" class="btn btn-outline-success mb-3">Назад в меню</a>
+{% endblock %}

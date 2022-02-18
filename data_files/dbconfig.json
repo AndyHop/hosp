@@ -1,0 +1,38 @@
+{
+    "guest": {
+        "host": "127.0.0.1",
+        "user": "guest",
+        "password": "guest",
+        "database": "hospital"
+    },
+    "employeers": {
+        "host": "127.0.0.1",
+        "user": "employeers",
+        "password": "emp1oy",
+        "database": "hospital"
+    },
+    "admins": {
+        "host": "127.0.0.1",
+        "user": "admins",
+        "password": "adM1n",
+        "database": "hospital"
+    },
+    "junior": {
+        "host": "127.0.0.1",
+        "user": "junior",
+        "password": "junior",
+        "database": "hospital"
+    },
+    "head_terapy": {
+        "host": "127.0.0.1",
+        "user": "head_terapy",
+        "password": "head_terapy",
+        "database": "hospital"
+    },
+    "head_surgery": {
+        "host": "127.0.0.1",
+        "user": "head_surgery",
+        "password": "head_surgery",
+        "database": "hospital"
+    }
+}

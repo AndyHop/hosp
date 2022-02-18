@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table class="table mx-auto mb-3" style="width: 400px">
+        <thead>
+            <h3>информация по отделениям</h3>
+        </thead>
+        <tbody>
+        <tr>
+         <td align = center> number </td>
+         <td align = center> Отделение </td>
+         <td align = center> Заведующий </td>
+         <td align = center> Вместимость </td>
+      </tr>
+            {% for row in info %}
+                <tr>
+
+                    <td>{{ row['number'] }}</td>
+                    <td>{{ row['Отделение'] }}</td>
+                    <td>{{ row['Заведующий'] }}</td>
+                    <td>{{ row['Вместимость'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/req_menu" class="btn btn-outline-success mb-3">Назад в меню</a>
+{% endblock %}

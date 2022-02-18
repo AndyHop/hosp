@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        {{ top }}
+    {% for pat in patience %}
+        <form class="text-center mx-auto mb-3" action="" method=POST>
+            <input type=hidden name=pat_id value={{ pat.id_patience }}>
+            <input type=hidden name=otdel_id value={{ otdel }}>
+            {{ pat.name }} {{ pat.birthday }}
+            {{ pat.receipt_date }} {{ pat.receipt_diagnose }}
+            <input type=submit class="btn btn-success mb-3" value='назначить врача' name='conf'>
+        </form>
+    {% endfor %}
+
+    <a href="/menu" class="btn btn-outline-success mb-3">Назад в меню</a>
+{% endblock %}

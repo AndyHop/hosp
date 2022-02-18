@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table class="table mx-auto mb-3" style="width: 400px">
+        <thead>
+            <h3>информация о пациентах у врача {{ doctor }}</h3>
+        </thead>
+        <tbody>
+        <tr>
+         <td align = center> имя пациента </td>
+         <td align = center> дата поступления </td>
+         <td align = center> диагноз </td>
+      </tr>
+            {% for pat in patience %}
+                <tr>
+
+                    <td>{{ pat['name patience'] }}</td>
+                    <td>{{ pat['diagnose IN'] }}</td>
+                    <td>{{ pat['receipt_diagnose'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/req_menu" class="btn btn-outline-success mb-3">Назад в меню</a>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+     <form method="post" class="text-center mx-auto mb-3" style="width: 400px" action="">
+        {% for p in pat %}
+         пациент: {{ p['name'] }} {{ p['birthday'] }}
+            {{ p['receipt_date'] }} {{ p['receipt_diagnose'] }} {{ p['id_patience'] }}
+        <input type=hidden name=patient_id value={{ p['id_patience'] }}>
+        {% endfor %}
+
+        <div class="form-group">
+            <label for="doctor">выберите врача</label>
+            <select class="form-control" id="doctor" name="doctor">
+                {% for doctor in doctors %}
+                    <option value="{{doctor['id_doctors']}}" SELECTED>{{ doctor['name'] }}</option>"
+                {% endfor %}
+            </select>
+        </div>
+        <button type="submit" class="btn btn-outline-success" name="confirm" value="Отправить">Подтвердить</button>
+    </form>
+    <a href="/menu" class="btn btn-outline-success mb-3">Назад в меню </a>
+{% endblock %}

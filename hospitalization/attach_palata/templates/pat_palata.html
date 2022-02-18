@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+        {{ top }}
+    <table class="table mx-auto mb-3" style="width: 400px">
+        <thead>
+            <h3>пациенты:</h3>
+        </thead>
+        <tbody>
+        <tr>
+         <td align = center> пациент </td>
+         <td align = center> дата рождения </td>
+         <td align = center> диагноз </td>
+            <td align = center> получен </td>
+            <td align = center> Отделение </td>
+
+      </tr>
+            {% for pat in pat_list %}
+                <tr>
+                <form action="" method=POST>
+                    <input type=hidden name=id_pat value={{ pat['id_patience'] }}>
+                    <input type=hidden name=id_otdel value={{ pat['id_otdelenie'] }}>
+                    <td>{{ pat['name'] }}</td>
+                    <td>{{ pat['birthday'] }}</td>
+                    <td>{{ pat['receipt_diagnose'] }}</td>
+                    <td>{{ pat['receipt_date'] }}</td>
+                    <td>{{ pat['otdel'] }}</td>
+
+                    <td> <input type=submit class="btn btn-success mb-3" value='перейти к палатам' name='conf' > </td>
+
+                </form>
+                </tr>
+
+            {% endfor %}
+        </tbody>
+
+    </table>
+
+
+
+    </form>
+
+    <a href="/hosp" class="btn btn-outline-success mb-3">Назад в меню</a>
+{% endblock %}

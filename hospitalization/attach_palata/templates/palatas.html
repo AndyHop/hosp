@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+   номер заказа: {{ order_id }}
+    <table class="table mx-auto mb-3" style="width: 400px">
+        <thead>
+            <h3>текущая информация о человеке:</h3>
+        </thead>
+        <tbody>
+        <tr>
+            <td align = center> id </td>
+            <td align = center> имя </td>
+            <td align = center> дата рождения </td>
+            <td align = center> адрес </td>
+            <td align = center> дата пол. диагноза </td>
+            <td align = center> дата госпитализации </td>
+        </tr>
+                <tr>
+                    <td>{{ pat['id_patience'] }}</td>
+                    <td>{{ pat['name'] }}</td>
+                    <td>{{ pat['birthday'] }}</td>
+                    <td>{{ pat['receipt_diagnose'] }}</td>
+                    <td>{{ pat['receipt_date'] }}</td>
+                    <td>{{ pat['hosp_date'] }}</td>
+                </tr>
+        </tbody>
+    </table>
+
+    <table class="table mx-auto mb-3" style="width: 400px">
+        <thead>
+            <h3>информация по палатам</h3>
+        </thead>
+        <tbody>
+        <tr>
+         <td align = center> Отделение </td>
+         <td align = center> номер палаты </td>
+         <td align = center> Вместимость </td>
+            <td align = center> категория </td>
+            <td align = center> мест занято </td>
+
+            <td align = center> выбрать </td>
+      </tr>
+
+            {% for otdel in otdel_info %}
+
+                <tr>
+                    <form method="post" class="text-center mx-auto mb-3" style="width: 400px" action="">
+                    <input type=hidden name=pat_id value={{ pati_id }}>
+                    <input type=hidden name=id_palat value={{ otdel['idpalata'] }}>
+                    <td>{{ otdel['name'] }}</td>
+                    <td>{{ otdel['plt_num'] }}</td>
+                    <td>{{ otdel['capacity'] }}</td>
+                    <td>{{ otdel['category'] }}</td>
+                    <td>{{ otdel['free'] }}</td>
+                    <td><input type=submit class="btn btn-success mb-3" value='выбрать' name='confirm'></td>
+
+                    </form>
+                </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+
+    <a href="/hosp" class="btn btn-outline-success mb-3">Назад в меню
+    </a>
+
+{% endblock %}

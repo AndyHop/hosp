@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h3>Главное меню</h3>
+    <p> Авторизован как {{ user_group }} </p>
+    {%for m in menu%}
+		<div>
+			<a href = "{{ m.url }}" style="text-decoration: none; font-size: 25px;">{{ m.name }}</a>
+		</div>
+    {%endfor%}
+{% endblock %}

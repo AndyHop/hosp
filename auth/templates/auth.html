@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Авторизация</h2>
+    <p> {{ message }} </p>
+    <form class="form-signin mx-auto mb-3" action='' method='Post' style="width: 400px">
+        <label for="login" class="sr-only">login</label>
+        <input type=text id=login name=login class="form-control mb-3" placeholder="login">
+
+        <label for="password" class="sr-only">Password</label>
+        <input type=password id=password name=password class="form-control mb-3" placeholder="password">
+
+        <button class="btn btn-primary btn-block" type="submit" name='send' value='auth'>Sign in</button>
+    </form>
+
+{% endblock %}

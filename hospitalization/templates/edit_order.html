@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+   номер заказа: {{ order_id }}
+     <table class="table mx-auto mb-3" style="width: 400px">
+        <thead>
+            <h3>текущий состав заказа:</h3>
+        </thead>
+        <tbody>
+        <tr>
+            <td align = center> id_session </td>
+            <td align = center> id_service </td>
+            <td align = center> количество </td>
+        </tr>
+            {% for ordr in order_list %}
+                <tr>
+
+                    <td>{{ ordr['session_order_id'] }}</td>
+                    <td>{{ ordr['service_id'] }}</td>
+                    <td>{{ ordr['amount'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    вы можете добавить усуги к заказу:
+    {% for service in service_list %}
+        <form class="text-center mx-auto mb-3" action="" method=POST>
+
+            <input type=hidden name=srvc_id value={{ service.id }}>
+            <input type=hidden name=zakaz_id value={{ order_id }}>
+             {{ service.name }} {{ service.cost }} {{ service.amount }}
+            <input type=submit class="btn btn-success mb-3" value='добавить' name='edit_add'>
+            <input type=submit class="btn btn-success mb-3" value='удалить' name='edit_del'>
+        </form>
+    {% endfor %}
+    <form class="text-center mx-auto mb-3" action="" method=POST>
+      <input type=submit class="btn btn-outline-success mb-3" value='подтвердить' name='confirm'>
+        <input type=hidden name=zakaz_id value={{ order_id }}>
+    </form>
+
+    <a href="/menu" class="btn btn-outline-success mb-3">Назад в меню
+    </a>
+{% endblock %}

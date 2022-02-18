@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        <form method="post" class="text-center mx-auto mb-3" style="width: 400px" action="">
+        <div class="form-group">
+            <label for="cost">впишите имя клиента</label>
+            <input class="form-control" type=text id=cl_name name=cl_name required>
+        </div>
+
+        <form action="" method=POST>
+      <input type=submit value='новый заказ' class="btn btn-outline-success mb-3" name = 'create'>
+    </form>
+        </form>
+    <a href="/cart" class="btn btn-outline-success mb-3">Назад в меню корзины</a>
+{% endblock %}

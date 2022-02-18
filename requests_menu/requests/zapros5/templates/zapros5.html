@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table class="table mx-auto mb-3" style="width: 400px">
+        <thead>
+            <h3>все врачи без прикрепленных пациентов в конкретном отделении</h3>
+        </thead>
+        <tbody>
+        <tr>
+         <td align = center> id </td>
+         <td align = center> врач </td>
+         <td align = center> начал работать </td>
+         <td align = center> уволился </td>
+            <td align = center> отделение </td>
+      </tr>
+            {% for row in info %}
+                <tr>
+
+                    <td>{{ row['id_doctors'] }}</td>
+                    <td>{{ row['name'] }}</td>
+                    <td>{{ row['start_date'] }}</td>
+                    <td>{{ row['fin_date'] }}</td>
+                    <td>{{ row['otdname'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/req_menu" class="btn btn-outline-success mb-3">Назад в меню</a>
+{% endblock %}

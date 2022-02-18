@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>все пациенты у врача</h2>
+    <h3>выберите врача ниже</h3>
+    <form method="post" class="text-center mx-auto mb-3" style="width: 400px" action="">
+
+        <div class="form-group">
+            <label for="month">выберите врача</label>
+            <select class="form-control" id="doctor" name="doctor">
+                {% for doctor in doctors %}
+                    <option value="{{doctor['name']}}" SELECTED>{{ doctor['name'] }}</option>"
+                {% endfor %}
+            </select>
+        </div>
+
+
+        <button type="submit" class="btn btn-outline-success" name="send" value="Отправить">send</button>
+    </form>
+    <a href="/req_menu" class="btn btn-outline-success mb-3">Назад в меню</a>
+{% endblock %}
